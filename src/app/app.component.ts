@@ -6,11 +6,4 @@ import { Component } from '@angular/core';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
-  title = 'recipe-app';
-  feature: number = 0;
-  
-  onNavigate(componentNumber: number){
-    this.feature = componentNumber;
-  }
-
 }
