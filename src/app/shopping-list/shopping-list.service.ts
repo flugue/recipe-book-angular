@@ -24,6 +24,11 @@ export class ShoppingListService {
     this.ingredientChanged.next(this.ingredients.slice());
   }
 
+  bulkAddIngredients(ingredients: Ingredient[]) {
+    this.ingredients = [...this.ingredients, ...ingredients];
+    this.ingredientChanged.next(this.ingredients.slice());
+  }
+
   updateIngredient(index: number, ingredient: Ingredient) {
     this.ingredients[index] = ingredient;
     this.ingredientChanged.next(this.ingredients.slice());

@@ -13,8 +13,9 @@
           </button>
           <button
             style="margin-right: 5px"
-            type="submit"
+            type="button"
             class="btn btn-secondary"
+            (click)="onCancel()"
           >
             Cancel
           </button>
@@ -42,13 +43,18 @@
               class="form-control"
               id="imagePath"
               formControlName="imagePath"
+              #imagePath
             />
           </div>
         </div>
       </div>
       <div class="row">
         <div class="col-xs-12">
-          <img src="" class="img-responsive" alt="" />
+          <img
+            [src]="imagePath.value"
+            class="img-fluid img-thumbnail rounded"
+            alt=""
+          />
         </div>
       </div>
       <div class="row">
@@ -84,7 +90,13 @@
               />
             </div>
             <div class="col-xs-2">
-              <button class="btn btn-danger">X</button>
+              <button
+                type="button"
+                (click)="onDeleteIngredient(i)"
+                class="btn btn-danger"
+              >
+                X
+              </button>
             </div>
           </div>
         </div>
